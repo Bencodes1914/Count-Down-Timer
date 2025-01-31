@@ -78,7 +78,7 @@ h1 {
 .countdown-value {
     background-color: rgba(42, 42, 69, 0.9);
     padding: 2rem;
-    border-radius: 0.5rem;
+    /*border-radius: 0.5rem;*/
     width: 140px;
     height: 140px;
     display: flex;
