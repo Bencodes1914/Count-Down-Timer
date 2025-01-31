@@ -78,14 +78,14 @@ h1 {
 .countdown-value {
     background-color: rgba(42, 42, 69, 0.9);
     padding: 2rem;
-    /*border-radius: 0.5rem;*/
+    border-radius: 0.5rem;
     width: 140px;
     height: 140px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1rem;
-    box-shadow: 0 70px 16px green (0,0,0,30);
+    box-shadow: 10px 20px;
 }
 
 .countdown-number {
