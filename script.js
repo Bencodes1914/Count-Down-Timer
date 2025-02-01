@@ -1,52 +1,31 @@
-function startCountdown() {
-    const elements = {
-        days: document.getElementById('days'),
-        hours: document.getElementById('hours'),
-        minutes: document.getElementById('minutes'),
-        seconds: document.getElementById('seconds')
-    };
+function createCountdown() {
+    const launchDate = new Date("February 4, 2025 18:00:00").getTime();
 
-    let countdown = {
-        days: 10,
-        hours: 10,
-        minutes: 59,
-        seconds: 30,
-    };
-
-    function updateDisplay() {
-        for (let unit in countdown) {
-            elements[unit].textContent = String(countdown[unit]).padStart(2, '0');
-        }
-    }
+    var daysElement = document.getElementById('days');
+    var hoursElement = document.getElementById('hours')
+    var minutesElement = document.getElementById('minutes')
+    var secondsElement = document.getElementById('seconds')
 
     function updateCountdown() {
-        countdown.seconds--;
-        
-        if (countdown.seconds < 0) {
-            countdown.seconds = 59;
-            countdown.minutes--;
-            
-            if (countdown.minutes < 0) {
-                countdown.minutes = 59;
-                countdown.hours--;
-                
-                if (countdown.hours < 0) {
-                    countdown.hours = 23;
-                    countdown.days--;
-                    
-                    if (countdown.days < 0) {
-                        clearInterval(timer);
-                        countdown = { days: 0, hours: 0, minutes: 0, seconds: 0 };
-                    }
-                }
-            }
-        }
-        
-        updateDisplay();
-    }
+        const currentTime = new Date().getTime();
+        const timeDifference = launchDate - currentTime;
 
-    updateDisplay();
-    const timer = setInterval(updateCountdown, 1000);
+        const dayInSeconds = 1000 * 60 * 60 * 24;
+        const hourInSeconds = 1000 * 60 * 60;
+        const minutesInSeconds = 1000 * 60;
+
+        const days = Math.floor(timeDifference / dayInSeconds);
+        const hours = Math.floor((timeDifference % dayInSeconds) / hourInSeconds);
+        const minutes = Math.floor((timeDifference % hourInSeconds) / minutesInSeconds);
+        const seconds = Math.floor((timeDifference % minutesInSeconds) / 1000);
+
+        daysElement.textContent = days;
+        hoursElement.textContent = hours;
+        minutesElement.textContent = minutes;
+        secondsElement.textContent = seconds;
+    }   
+
+    setInterval(updateCountdown, 1000);
 }
 
-startCountdown();
+createCountdown()
