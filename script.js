@@ -7,10 +7,10 @@ function startCountdown() {
     };
 
     let countdown = {
-        days: 8,
-        hours: 23,
-        minutes: 55,
-        seconds: 41
+        days: 10,
+        hours: 10,
+        minutes: 59,
+        seconds: 30,
     };
 
     function updateDisplay() {
@@ -35,7 +35,6 @@ function startCountdown() {
                     countdown.days--;
                     
                     if (countdown.days < 0) {
-                        // Timer complete
                         clearInterval(timer);
                         countdown = { days: 0, hours: 0, minutes: 0, seconds: 0 };
                     }
@@ -50,6 +49,4 @@ function startCountdown() {
     const timer = setInterval(updateCountdown, 1000);
 }
 
-// Initialize
-createStars();
 startCountdown();
