@@ -2,9 +2,9 @@ function createCountdown() {
     const launchDate = new Date("February 4, 2025 18:00:00").getTime();
 
     var daysElement = document.getElementById('days');
-    var hoursElement = document.getElementById('hours')
-    var minutesElement = document.getElementById('minutes')
-    var secondsElement = document.getElementById('seconds')
+    var hoursElement = document.getElementById('hours');
+    var minutesElement = document.getElementById('minutes');
+    var secondsElement = document.getElementById('seconds');
 
     function updateCountdown() {
         const currentTime = new Date().getTime();
