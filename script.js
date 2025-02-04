@@ -1,5 +1,5 @@
 function createCountdown() {
-    const launchDate = new Date("February 4, 2025 18:00:00").getTime();
+    const launchDate = new Date("February 4, 2025 11:16:00").getTime();
 
     var daysElement = document.getElementById('days');
     var hoursElement = document.getElementById('hours');
